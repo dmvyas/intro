@@ -1,0 +1,710 @@
+/*===== GOOGLE FONTS =====
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+.animate__animated.animate__lightSpeedInLefte {
+  --animate-duration: 2s;
+}
+
+
+/*===== VARIABLES CSS =====*/
+:root {
+
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+
+  --header-height: 3rem;
+  --font-semi: 600;
+  /*===== Colores =====*/
+  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
+  /* HSL color mode */
+  --hue-color: 224;
+  --first-color: #B08C77;                        /* hsl(var(--hue-color), 89%, 60%);*/ /*#B08C77;     font-family: 'DM Serif Display', serif; */
+  --second-color:  #5C4033;                     /*  hsl(var(--hue-color), 56%, 12%);*/ /*#FDDEAD;*/
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+
+  
+  /*===== Margenes =====*/
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  /*===== z index =====*/
+  --z-back: -10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 968px) {
+  :root {
+
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .875rem;
+  }
+}
+
+/*===== BASE =====*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  
+  /*
+  cursor: url("assets/img/Alternate.cur");
+  background-size: cover;
+  background-position: center;
+  color: #000000;
+  background-image: url('assets/img/IMG_9255BEE3234C-1.jpeg'); /* Add your image path here 
+  background-size: cover; /* This will ensure the image covers the whole body 
+  background-position: center; /* This centers the image in the body */
+  /*
+  background-repeat: no-repeat; /* This will prevent the image from repeating */
+
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+
+ul {
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+
+
+a {
+
+  text-decoration: none;
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+.section-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);                                  /*0 1px 4px rgba(146, 161, 176, 0.15);#000000;#ffffff;*/
+}
+
+/*===== NAV =====*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: 0.5s;
+  }
+}
+.nav__item {
+  margin-bottom: var(--mb-4);
+}
+.nav__link {
+  position: relative;
+  color: #fff;
+}
+.nav__link:hover {
+  position: relative;
+}
+.nav__link:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.nav__logo {
+  color: var(--second-color);
+
+}
+.nav__toggle {
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active-link::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/*=== Show menu ===*/
+.show {
+  right: 0;
+}
+
+/*===== HOME =====*/
+.home {
+  position: relative;
+  row-gap: 5rem;
+  padding: 4rem 0 5rem;
+}
+.home__data {
+  align-self: center;
+  display: inline;
+}
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
+.home__title {
+  font-family: 'DM Serif Display', serif;
+  display: inline;
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-5);
+}
+.home__title-color {
+  color: var(--first-color);
+}
+.home__social {
+  display: flex;
+  flex-direction: column;
+}
+.home__social-icon {
+  width: max-content;
+  margin-bottom: var(--mb-2);
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+.home__social-icon:hover {
+  color: var(--first-color);
+}
+.home__img { 
+  /*
+  mix-blend-mode: screen;
+  background-image: url('assets/img/Paint Brush Splash PNG - 3500x3206.png') ;
+  background-position:center;
+  background-size:cover;*/
+  /*transform: translate(-50%, -50%); Center the image in the desired location */
+  position: absolute; /* or relative, depending on your layout */
+  top: 24%; /* Adjust as necessary 25*/
+  left: 57%; /* Adjust as necessary 60*/
+  border-radius: 2%;  /*Makes the image container circular */
+  overflow: hidden; /* Clips the contents of this container to a circle */
+  width: 350px; /* Diameter of the circle  old 350px */
+  height: 390px; /* Diameter of the circle old 400px */
+  background-color: rgba(255, 255, 255, 0.78); /* Set the background color with opacity */
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.78); /* Set the box shadow */
+
+  animation: animate__lightSpeedInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+}
+
+/*
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;*/
+
+
+/*
+.home__blob {
+  fill: var(--first-color);
+}
+*/
+
+/*
+.home__blob-img {
+  height: 100px;
+  width: 100px;
+}
+*/
+
+/*
+#profileImageContainer {
+  /* Positioning the container to match your layout 
+  position: absolute; /* or relative, depending on your layout 
+  top: 50%; /* Adjust as necessary 
+  left: 50%; /* Adjust as necessary 
+  transform: translate(-50%, -50%); /* Center the image in the desired location 
+  border-radius: 50%; /* Makes the image container circular 
+  overflow: hidden; /* Clips the contents of this container to a circle 
+  width: 200px; /* Diameter of the circle 
+  height: 200px; /* Diameter of the circle 
+  border: 4px solid #D9B8A3; /* A lighter tone derived from #B08C77
+  box-shadow: 0 8px 16px rgba(92, 64, 51, 0.2); /* Shadow with a muted tone derived from #5C4033 
+}
+/*
+#elegantProfileImage {
+  width: 100%; /* Make the image fill the container 
+  height: 100%; /* Make the image fill the container 
+  object-fit: cover; /* Ensures the image covers the area without stretching 
+}
+*/
+
+/*
+.home__blob {
+  fill: var(--first-color);
+}
+.home__blob-img {
+  width: 360px;
+}
+*/
+
+
+/*BUTTONS*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #ffffff;
+  padding: 0.75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+
+.button:hover {
+  box-shadow: #F5F5DC; /*0px 10px 36px rgba(0, 0, 0, 0.15);*/
+}
+
+/* ===== ABOUT =====*/
+.about__container {
+  color: #000000;
+  row-gap: 2rem;
+  text-align: center;
+  text-shadow: 4px 4px 9px rgb(238, 255, 0);
+  
+}
+
+/* Add red highlighting to specific words */
+.highlight-red {
+  color: #000000;
+  row-gap: 2rem;
+  text-align: center;
+  text-shadow: 3px 3px 5px rgb(255, 94, 0);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+
+.about__subtitle {
+  font-family: 'Kalam', cursive;
+  font-size: 195%;
+  margin-bottom: var(--mb-2);
+  text-shadow: 4px 4px 9px rgb(255, 255, 255);
+  
+}
+
+.about__img {
+  justify-self: center;
+}
+
+.about__img img {
+  width: 200px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+
+/* ===== SKILLS =====*/
+.skills__container {
+  row-gap: 2rem;
+  text-align: center;
+}
+
+.skills__subtitle {
+  margin-bottom: var(--mb-2);
+
+}
+
+.skills__text {
+  margin-bottom: var(--mb-4);
+}
+
+.skills__data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-weight: var(--font-semi);
+  padding: 0.5rem 1rem;
+  margin-bottom: var(--mb-4);
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); /* 0px 4px 25px rgba(14, 36, 49, 0.15);*/
+}
+
+.skills__icon {
+  font-size: 1rem;
+  margin-right: var(--mb-2);
+  color: var(--first-color);
+}
+
+.skills__names {
+  display: flex;
+  align-items: center;
+}
+
+.skills__bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--first-color);
+  height: 0.25rem;
+  border-radius: 0.5rem;
+  z-index: var(--z-back);
+}
+
+.skills__html {
+  width: 80%;
+}
+
+.skills__css {
+  width: 65%;
+}
+
+.skills__js {
+  width: 55%;
+}
+
+.skills__ux {
+  width: 70%;
+}
+
+.skills__img {
+  border-radius: 0.3rem;
+}
+
+/* ===== WORK =====
+.work__container {
+  row-gap: 2rem;
+}
+.work__img {
+  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.work__img img {
+  transition: 1s;
+}
+.work__img img:hover {
+  transform: scale(1.1);
+}
+*/
+
+/*Achievements*/
+/* Additions to existing styles for the achievements section 
+.achievements__container {
+  position: relative;
+  width: 100%; /* Adjust width as needed 
+  margin: auto;
+}
+
+.carousel {
+  max-width: 100%; /* Adjust this based on your preference 
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  text-align: center; /* Centering the image inside the slide 
+}
+
+/* Hide the navigation buttons 
+.prev, .next {
+  display: none;
+}
+
+/* Ensure the slide image is centered and has some spacing 
+.slide img {
+  max-width: 100%; /* Makes the image responsive, adjust this value as needed 
+  max-height: 500px; /* Adjust the max-height as needed 
+  width: auto;
+  height: auto;
+  margin: auto; /* This will center the image 
+  display: block; /* Display images as block elements 
+  border: 1px solid #eaeaea; /* Optional: adds a border around the image 
+  box-shadow:  #F5F5DC;                          /* 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a shadow for some depth 
+  border-radius: 10px; /* Optional: rounds the corners of the images
+}
+/*
+.next {
+  right: 0;
+}
+/*
+.prev:hover, .next:hover {
+  background-color: #F5F5DC; /* rgba(0,0,0,1);
+}
+*/
+
+
+/*Download CV!*/
+.cv-download-container {
+  display: flex;
+  justify-content: center; /* This will center the button horizontally */
+  align-items: center; /* This will center the button vertically (if the container has a specified height) */
+  height: 100px; /* You can set the height as needed */
+  margin: 40px 0; /* This adds space above and below the container */
+}
+
+.download-cv-button {
+  padding: 10px 20px;
+  background-color: #CD9575;               /* #007bff; - old blue */
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-cv-button:hover {
+  background-color: #855439;
+}
+
+/*  #animatedText */
+#animatedText {
+  font-family: 'Poor Story', system-ui;
+  text-align: center;
+    color: transparent;
+    background-image: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExemV1cmx6MWo0enVjZTRra2V2Y25kMndvOTVnYWtiOWh0YThoY2NnMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/u1ebtrL6vnKf2dYfYr/giphy.gif");
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    box-shadow:  #ffffff;  
+    padding: 5vh 0;
+}
+
+
+/* ===== FOOTER =====*/
+.footer {
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+
+.footer__title {
+  font-size: 2rem;
+  margin-bottom: var(--mb-4);
+}
+
+.footer__social {
+  margin-bottom: var(--mb-4);
+}
+
+.footer__icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0 var(--mb-2);
+}
+
+.footer__copy {
+  font-size: var(--smaller-font-size);
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (max-width: 320px) {
+  .home {
+    row-gap: 2rem;
+  }
+  .home__img {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .home {
+    padding: 4rem 0 2rem;
+  }
+  .home__social {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+  .home__social-icon {
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+  }
+
+  .home__img  {
+    position: absolute;
+    width: 300px;
+    bottom: 25;
+
+  }
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .skills__container {
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+    column-gap: 1rem;
+  }
+  .work__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    padding-top: 2rem;
+  }
+  .contact__form {
+    width: 360px;
+    padding-top: 2rem;
+  }
+  .contact__container {
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+  .section-title {
+    margin-bottom: var(--mb-6);
+  }
+  .section-title::after {
+    width: 80px;
+    top: 3rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__list {
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item {
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__link {
+    color: var(--second-color);
+  }
+  .nav__link.active {
+    border-bottom: 2px solid blue;
+}
+  .home {
+    padding: 8rem 0 2rem;
+  }
+  .home__img {
+    width: 400px;
+    bottom: 10%;
+  }
+  .about__container {
+    padding-top: 2rem;
+  }
+  .about__img img {
+    width: 300px;
+  }
+  .skills__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    text-align: initial;
+  }
+  .work__container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home {
+    padding: 10rem 0 2rem;
+  }
+  .home__img {
+    width: 450px;
+  }
+}
+.skills__names img{
+  height: 42px;
+  width: 34px;
+}
+.skills__names img{
+  margin: 10px;
+}
